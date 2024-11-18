@@ -1,0 +1,14 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{{ block content }}
+<p>
+    You did not complete the survey within the time limit.
+</p>
+<p>
+     If something went wrong, please contact us at <b>{{ C.CONTACT }}</b>.
+</p>
+<p>
+    You can close this page if you do not have further questions.
+</p>
+{{ endblock }}

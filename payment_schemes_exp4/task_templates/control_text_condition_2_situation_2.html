@@ -1,0 +1,22 @@
+<div class="card bg-light instructions">
+   <div class="card-body">
+      <p>The payment mechanism is as follows:</p>
+      <p>Both workers perform the task individually and independently. The time limit per round to work on the sliders is 120 seconds. Workers receive a flat payment of €1.60 per round of work, independently of the actual number of slides set.
+      </p>
+      <p>Our data containing more than 600 workers show that workers can correctly place about 20 sliders per round on average within a time limit of 120 seconds. The most skilled workers (top 10%) can place about 29 sliders in 120 seconds on average, while the least skilled workers (bottom 10%) can place about 11 sliders in 120 seconds on average. Irrespective of their actual performance, workers will receive the flat payment of €1.60 per round, amounting to a payment of €6.40 in total.  Note also that both workers know their own and the other worker’s performance and payoffs in each round and in total.
+      </p>
+
+   </div>
+</div>
+
+<div id='control_questions'>
+   <br>
+   <p>If all aspects of the task and the payment of workers are clear, please answer the following questions about the
+      task:
+   </p>
+   <p>Assume that worker A placed 13 sliders correctly and worker B placed 27 sliders correctly in round 1.</p><br>
+   <span>a) What are the round 1 earnings of worker A (in €)? {% formfield player.earning_A_flat %}</span><br>
+   <span>b) What are the round 1 earnings of worker B (in €)? {% formfield player.earning_B_flat %}</span><br>
+   <span>c) How many seconds does worker A have available for the task in round 2? {% formfield player.seconds_A_flat %}</span><br>
+   <span>d) How many seconds does worker B have available for the task in round 2? {% formfield player.seconds_B_flat %}</span>
+</div>

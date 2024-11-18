@@ -1,0 +1,63 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+Part 1: Sociodemographic Questionnaire
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ static 'payment_schemes_exp3/scripts/survey_logical_flow.js' }}"></script>
+{% endblock %}
+
+{% block content %}
+<div>
+    <p>The first part of the survey concerns some aspects of your demographic background.</p>
+</div>
+
+<p>{% formfield player.gender %} {% formfield player.other_gender %}</p>
+
+<br>
+
+<div>
+    <p>{% formfield player.birth_year %}</p>
+</div>
+
+<br>
+
+<div>
+    <p>{% formfield player.political_beliefs %}
+    </p>
+</div>
+
+<br>
+
+<div>
+    <p>
+        4. This ladder shows where people stand in society. At the top of the ladder
+        (marked "10") are those people who are doing best, those who have the most money, have the
+        best education and are most respected. At the bottom of the ladder (marked "1") are those
+        who are worst off, have the least money, have the worst education, and are the least
+        respected.
+        <br>
+        Where would you place yourself on this ladder relative to the people at the top and bottom?
+        Please mark the box next to the rung you think you are standing on!
+    </p>
+</div>
+
+<table style="height: 350px; width: 100px; margin: 0 auto;">
+    <tbody>
+        <tr>
+            <td style="width: 113px;">
+                <img src="{{ static 'payment_schemes_exp3/img/ladder.png' }}" height="330">
+            </td>
+            <td style="width: 113px;">{% formfield player.social_ladder %}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<br>
+
+<div style="margin: 0 auto;">{% next_button %}</div>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Thank you
+{% endblock %}
+
+{% block content %}
+<br>
+<p>
+    You have answered all questions. Thank you for your participation!
+</p>
+
+<br>
+
+<p>
+    We randomly selected your Decision {{ selected_decision }}.
+</p>
+
+<br>
+
+<p>
+    In this Decision, you chose the following option:
+    {{ if selected_option == 0 }}
+        <span><i>Implement <b>tournament payment mechanism</b> and receive <b>€{{ price_tournament }}</b></i></span>
+    {{ else }}
+        <span><i>Implement <b>piece-rate payment mechanism</b> and receive <b>€{{ price_piece_rate }}</b></i></span>
+    {{ endif }}
+</p>
+
+<p>
+    If your decision is selected to determine the lab session, you will receive €{{ selected_option_payout }} and
+    {{ if selected_option == 0 }}
+        <span>the <b>tournament payment scheme</b> is implemented.</span>
+    {{ else }}
+        <span>the <b>piece-rate payment scheme</b> is implemented.</span>
+    {{ endif }}
+</p>
+
+<p>
+    If not, you will receive €6.
+</p>
+
+<br>
+
+<p>
+    If you have any questions, please contact us at <b>{{ C.CONTACT }}</b>.
+</p>
+
+<br>
+
+<p>
+    {{ link|safe }}
+</p>
+{% endblock %}

@@ -1,0 +1,76 @@
+<style>
+._formfield {
+    display: inline-block;
+}
+</style>
+
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a id="link-judgement" class="nav-link active" aria-current="page" href="#"
+    onclick="selectTab(0);">Fairness Judgement</a>
+  </li>
+  <li class="nav-item">
+    <a id="link-general-instruction" class="nav-link" href="#"
+    onclick="selectTab(1);">Task Overview</a>
+  </li>
+  <li class="nav-item">
+    <a id="link-specific-instruction" class="nav-link" href="#"
+    onclick="selectTab(2);">Payment Mechanism</a>
+  </li>
+</ul>
+
+<script>
+   /**
+    * Select tab to be displayed
+    *
+    * @param selection 0: Fairness judgement, 1: General Instruction, 2: Specific instruction
+    */
+   function selectTab(selection){
+      const divJudgement = document.getElementById("div-judgement");
+      const divGeneralInstruction = document.getElementById("div-general-instruction");
+      const divSpecificInstruction = document.getElementById("div-specific-instruction");
+      const linkJudgement = document.getElementById("link-judgement");
+      const linkGeneralInstruction = document.getElementById("link-general-instruction");
+      const linkSpecificInstruction = document.getElementById("link-specific-instruction");
+
+      switch(selection) {
+        case 0:
+          divJudgement.style.display = "block";
+          divGeneralInstruction.style.display = "none";
+          divSpecificInstruction.style.display = "none";
+          linkJudgement.className = "nav-link active";
+          linkGeneralInstruction.className = "nav-link";
+          linkSpecificInstruction.className = "nav-link";
+          linkJudgement.setAttribute("aria-current", "page");
+          linkGeneralInstruction.setAttribute("aria-current", "");
+          linkSpecificInstruction.setAttribute("aria-current", "");
+          break;
+        case 1:
+            divJudgement.style.display = "none";
+            divGeneralInstruction.style.display = "block";
+            divSpecificInstruction.style.display = "none";
+            linkJudgement.className = "nav-link";
+            linkGeneralInstruction.className = "nav-link active";
+            linkSpecificInstruction.className = "nav-link";
+            linkJudgement.setAttribute("aria-current", "");
+            linkGeneralInstruction.setAttribute("aria-current", "page");
+            linkSpecificInstruction.setAttribute("aria-current", "");
+            let input_desc = document.querySelector("[id^='show_description_']");
+            input_desc.value = "True";
+            break;
+        case 2:
+            divJudgement.style.display = "none";
+            divGeneralInstruction.style.display = "none";
+            divSpecificInstruction.style.display = "block";
+            linkJudgement.className = "nav-link";
+            linkGeneralInstruction.className = "nav-link";
+            linkSpecificInstruction.className = "nav-link active";
+            linkJudgement.setAttribute("aria-current", "");
+            linkGeneralInstruction.setAttribute("aria-current", "");
+            linkSpecificInstruction.setAttribute("aria-current", "page");
+            let input_scheme = document.querySelector("[id^='show_scheme_']");
+            input_scheme.value = "True";
+            break;
+      }
+   }
+</script>

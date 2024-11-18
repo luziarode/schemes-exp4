@@ -1,0 +1,44 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+Part 3: Fairness Judgement of Piece Rate Mechanism
+{% endblock %}
+
+{% block content %}
+{{ include "payment_schemes_exp4/task_templates/tab_navigation_fairness_judgements.html" }}
+
+<div id="div-judgement">
+    <br><br>
+    <p>
+        Let us now consider the overall picture of the previously described piece rate mechanism described above. Different
+        payment mechanisms to reward people for their work may be considered more or less fair.
+    </p>
+    <p>
+        We are interested in how people think about the described piece rate mechanism in terms of <b>overall fairness</b>
+        (use the tabs above to see descriptions of the task and the payment mechanism again).
+    </p>
+    <p>
+        To what extent do you think the described piece rate mechanism is <b>fair</b>? Please indicate your fairness
+        judgment on a scale from 0 (completely unfair) to 10 (completely fair).
+    </p>
+    <br>
+    <span>completely unfair {% formfield player.fairness_overall_piece_rate %} completely fair</span>
+    <br>
+</div>
+
+<input type="hidden" name="show_description_judgement_piece_rate" id="show_description_judgement_piece_rate">
+<input type="hidden" name="show_scheme_judgement_piece_rate" id="show_scheme_judgement_piece_rate">
+
+<div style="display: none;" id="div-general-instruction">
+    {{ include "payment_schemes_exp4/task_templates/main_template_instructions.html" }}
+</div>
+
+<div style="display: none;" id="div-specific-instruction">
+    {{ include "payment_schemes_exp4/task_templates/control_text_condition_1_situation_1_no_formfields.html" }}
+</div>
+<br>
+
+<div style="margin: 0 auto;">{% next_button %}</div>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+<div class="card bg-light instructions">
+   <div class="card-body">
+      <p>The payment mechanism is as follows:</p>
+      <p>Both workers perform the task individually and independently. The time limit per round to work on the sliders is 120
+         seconds. For each correctly positioned slider within the time limit per round, workers receive €0.03. Additionally,
+         they also receive €1 each round for participating in the task. Their payment per round can be summarized as €1 +
+         €0.03 &times; (Number of sliders).
+      </p>
+      <p>Our data containing more than 600 workers show that workers can correctly place about 20
+         sliders per round on average within a time limit of 120 seconds. An average-skilled worker would, therefore, receive
+         €1.60 (=€0.03 &times; 20 + €1) per round. The total earnings after four rounds would be €6.40 (=€1.60 &times; 4) for an
+         average-skilled worker.
+      </p>
+      <p>The most skilled workers (top 10%) can place about 29 sliders in 120 seconds on average,
+         amounting to a payment of €1.87 (=€0.03 &times; 29 + €1) per round, or €7.48 in total. The least skilled workers (bottom 10%)
+         can place about 11 sliders in 120 seconds on average, amounting to a payment of €1.33 (=€0.03 &times; 11 + €1) per round, or
+         €5.32 in total. Thus, the difference in total earnings between the two workers is €2.16 after four rounds if one
+         worker is skilled and the other is not. Note also that both workers know their own and the other worker&rsquo;s
+         performance and payoffs in each round and in total.
+      </p>
+   </div>
+</div>
+
+<div id='control_questions'>
+   <br>
+   <p>If all aspects of the task and the payment of workers are clear, please answer the following questions about the
+      task:
+   </p>
+   <p>Assume that worker A placed 13 sliders correctly and worker B placed 27 sliders correctly in round 1.</p><br>
+   <span>a) What are the round 1 earnings of worker A (in €)? {% formfield player.earning_A_piece_rate %}</span><br>
+   <span>b) What are the round 1 earnings of worker B (in €)? {% formfield player.earning_B_piece_rate %}</span><br>
+   <span>c) How many seconds does worker A have available for the task in round 2? {% formfield player.seconds_A_piece_rate %}</span><br>
+   <span>d) How many seconds does worker B have available for the task in round 2? {% formfield player.seconds_B_piece_rate %}</span>
+</div>

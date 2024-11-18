@@ -1,0 +1,58 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+Part 3: Fairness Judgement of Piece Rate Mechanism
+{% endblock %}
+
+{% block content %}
+
+{{ include "payment_schemes_exp4/task_templates/tab_navigation_fairness_judgements.html" }}
+
+<div id="div-judgement">
+    <div>
+        <br><br>
+        <p>
+            Let us now consider again <b>two specific aspects of fairness</b>.
+        </p>
+        <p>
+            First, a payment mechanism may involve fair and balanced procedures, although the resulting
+            distribution of payments to different workers may not be fair. That is what we call
+            <b><i>procedural fairness</i></b>.
+        </p>
+        <p>
+            Second, a payment mechanism may result in a distribution of
+            payments to different workers that can be considered fair, irrespective of whether the
+            procedures that led to the outcomes were fair. This is what we call <b><i>outcome fairness</i></b>.
+        </p>
+        <p>
+            We are interested in how people think about the described piece rate mechanism in terms of these
+            two fairness aspects.
+        </p>
+    </div>
+    <br>
+    <span>To what extent do you think the piece rate mechanism is <b><i>procedurally fair</i></b>? Please indicate your fairness judgments
+        on a scale from 0 (completely unfair) to 10 (completely fair).</span><br>
+    <span>completely unfair {% formfield player.fairness_procedural_piece_rate %} completely fair</span>
+    <br><br>
+    <span>To what extent do you think the piece rate mechanism is <b><i>outcome fair</i></b>? Please indicate your fairness judgments
+        on a scale from 0 (completely unfair) to 10 (completely fair).</span><br>
+    <span>completely unfair {% formfield player.fairness_outcome_piece_rate  %} completely fair</span>
+    <br>
+</div>
+
+<input type="hidden" name="show_description_judgement_piece_rate_spec" id="show_description_judgement_piece_rate_spec">
+<input type="hidden" name="show_scheme_judgement_piece_rate_spec" id="show_scheme_judgement_piece_rate_spec">
+
+<div style="display: none;" id="div-general-instruction">
+    {{ include "payment_schemes_exp4/task_templates/main_template_instructions.html" }}
+</div>
+
+<div style="display: none;" id="div-specific-instruction">
+    {{ include "payment_schemes_exp4/task_templates/control_text_condition_1_situation_1_no_formfields.html" }}
+</div>
+<br>
+
+<div style="margin: 0 auto;">{% next_button %}</div>
+
+{% endblock %}

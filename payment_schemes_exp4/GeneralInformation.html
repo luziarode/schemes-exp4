@@ -1,0 +1,42 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+General Information
+{% endblock %}
+
+{% block content %}
+<p>
+    Dear participant, thank you for taking part in this survey!
+</p>
+
+<p>
+    You will take part in an academic research conducted by <b>Heidelberg University</b>. We are interested in your
+    personal views and opinions: it is therefore important that you answer honestly and read the questions very
+    carefully before answering.
+</p>
+
+<p>
+    This survey should take (on average) <b>less than {{ time }} minutes</b> to complete. Please note that you have at
+    <b>maximum {{ time_max }} minutes</b> to finish the survey. After this, the survey will fail automatically.
+</p>
+
+<p>
+    For completing this study, you will receive a fixed payment of <b>{{ show_up_fee }}</b>. At the end of the
+    experiment, we will redirect you to a short online form, where you can decide if you want to receive your payment
+    via bank transfer or in cash at the AWI.
+</p>
+
+<p>
+    Participation in this survey is entirely voluntary and you will remain anonymous throughout the survey. Results
+    may include summary data, but you will never be identified. By continuing, you consent to the
+    publication of survey results. Note that you cannot save and come back later to answer the survey.
+</p>
+
+<p>
+    If you have any questions regarding this study, you may contact us at <b>{{ C.CONTACT }}</b>.
+</p>
+
+<br>
+{% next_button %}
+{% endblock %}

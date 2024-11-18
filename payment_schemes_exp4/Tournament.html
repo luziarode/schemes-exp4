@@ -1,0 +1,57 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block app_styles %}
+     <link rel="stylesheet" href="{{ static 'payment_schemes_exp3/style/style.css' }}">
+{% endblock %}
+
+{% block title %}
+Part 2: Tournament Mechanism
+{% endblock %}
+
+{% block content %}
+<script src="{{ static 'payment_schemes_exp3/scripts/toggle_descriptions.js' }}"></script>
+<p>
+   Please read the following text carefully and answer the questions below.
+</p>
+
+{{ include "payment_schemes_exp4/task_templates/control_text_condition_3_situation_3.html" }}
+
+<br>
+<input type="hidden" name="show_description_tournament" id="show_description_tournament">
+
+<button id="btn-toggle-description" class="btn btn-secondary" type="button"
+        onclick="toggleDescription('div-description', 'btn-toggle-description', 'show_description_tournament');">
+    Show task description again
+</button>
+<br>
+<div class="description-card bg-light instructions" id="div-description">
+    <div class="card card-body">
+        <p>Two workers have to perform a task on a computer. They will be paid according to some payment scheme, which
+           will be described in detail later. The task requires the workers to place a slider in the central position of
+           a slider bar. The slider initially appears at the far-left position in the bar. One has to use the mouse to
+           move the slider to the target position.
+        </p>
+
+        <strong>Initial position:</strong>
+        <div class="aligncenter">
+            <img src="{{ static 'payment_schemes_exp3/img/initial.png' }}" height="30"/>
+        </div>
+
+        <strong>Target position:</strong>
+        <div class="aligncenter">
+            <img src="{{ static 'payment_schemes_exp3/img/target.png' }}" height="34">
+        </div>
+
+        <p>The keyboard has been disabled in order to make the task sufficiently challenging. The task consists of 48
+           sliders to be correctly placed. Placing 48 sliders within a time limit (described later) is called a round.
+           The task is repeated for <strong>four</strong> rounds. The actual screen the workers have seen is like the
+           following.
+        </p>
+        <img src="{{ static 'payment_schemes_exp3/img/screen.PNG' }}" height="470">
+    </div>
+</div>
+<br>
+<div>{% next_button %}</div>
+{% endblock %}
+
